@@ -2,6 +2,7 @@
 
 A fun and interactive **Stone–Paper–Scissors** web game built using **HTML, CSS, and JavaScript**.  
 The game features multiple difficulty levels, score tracking, round-based gameplay, and a restart option — all wrapped in a clean neon-style UI.
+[PLAY HERE](https://sreejaniiii.github.io/StonePaperScissors/)
 
 ---
 
