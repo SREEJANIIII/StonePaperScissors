@@ -48,14 +48,14 @@ WelcomePg.append(input);
 
 
 });
-function win(pm){
+function lose(pm){
     
   if(pm=="STONE🪨") return 1;      // PAPER
   if(pm=="PAPER📄") return 2;      // SCISSORS
   if(pm=="SCISSORS✂️") return 0;   // STONE
 }
 
-function lose(pm){
+function win(pm){
   if(pm=="STONE🪨") return 2;      // SCISSORS
   if(pm=="PAPER📄") return 0;      // STONE
   if(pm=="SCISSORS✂️") return 1;   // PAPER
@@ -151,8 +151,6 @@ return;
     else if(ran1<=85)
     {
         result=tie(playMove);
-        p++;
-        c++;
     }
     else 
     {
@@ -174,8 +172,6 @@ return;
     }
     else{
     result=tie(playMove);
-    c++;
-    p++;
     }
     
 
@@ -189,8 +185,6 @@ return;
     else if(ran1<=85)
     {
         result=tie(playMove);
-        c++;
-        p++;
     }
     else 
     {
