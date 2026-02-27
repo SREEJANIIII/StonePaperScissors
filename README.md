@@ -43,6 +43,15 @@ The game features multiple difficulty levels, score tracking, round-based gamepl
 
 ---
 
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+You are free to use, modify, and distribute this project for personal or commercial purposes, as long as the original copyright notice is included.
+
+See the [LICENSE](LICENSE) file for full details.
+
+---
 
 ## 🙌 Author
 
