@@ -1,7 +1,7 @@
 # 🎮 Stone Paper Scissors Game
 
 A fun and interactive **Stone–Paper–Scissors** web game built using **HTML, CSS, and JavaScript**.  
-The game features multiple difficulty levels, score tracking, round-based gameplay, and a restart option — all wrapped in a clean neon-style UI.
+The game features multiple difficulty levels, score tracking, round-based gameplay, and a restart option — all wrapped in a clean UI.
 [PLAY HERE](https://sreejaniiii.github.io/StonePaperScissors/)
 
 ---
@@ -17,7 +17,6 @@ The game features multiple difficulty levels, score tracking, round-based gamepl
 - 🧠 **Computer AI with probability-based logic**
 - 📊 **Live Score Display**
 - 🔁 **Restart Option after Game Ends**
-- 🌈 **Neon-themed UI with glowing buttons**
 - 🖱️ **Interactive button-based controls**
 
 ---
