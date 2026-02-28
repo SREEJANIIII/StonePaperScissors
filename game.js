@@ -7,7 +7,8 @@ let WelcomePg=document.getElementById("WelcomePg")
  let l="";
  let playMove;
 start.addEventListener("click",event=>{
-document.body.removeChild(start);
+  document.body.removeChild(start);
+WelcomePg.innerHTML="";
 WelcomePg.textContent="CHOOSE A LEVEL";
 const levels=["EASY","MEDIUM","HARD"];
 levels.forEach(level => {
@@ -19,6 +20,7 @@ levels.forEach(level => {
   WelcomePg.append(btn);
 
   btn.addEventListener("click",event=>{
+    WelcomePg.innerHTML="";
     l=level;
 
     WelcomePg.textContent="ENTER THE NO. OF ROUNDS";
@@ -34,6 +36,7 @@ WelcomePg.append(input);
     submit.textContent="SUBMIT";
     WelcomePg.append(submit);
     submit.addEventListener("click",event=>{
+      WelcomePg.innerHTML="";
     n=Number(input.value);
     if(!Number.isInteger(n) || n <= 0) {
     alert("Enter a whole number greater than 0");
@@ -50,20 +53,28 @@ WelcomePg.append(input);
 });
 function lose(pm){
     
-  if(pm=="STONE🪨") return 1;      // PAPER
-  if(pm=="PAPER📄") return 2;      // SCISSORS
-  if(pm=="SCISSORS✂️") return 0;   // STONE
+  if(pm=="STONE🪨") 
+    return 1;      
+  if(pm=="PAPER📄") 
+    return 2;      
+  if(pm=="SCISSORS✂️") 
+    return 0;   
 }
 
 function win(pm){
-  if(pm=="STONE🪨") return 2;      // SCISSORS
-  if(pm=="PAPER📄") return 0;      // STONE
-  if(pm=="SCISSORS✂️") return 1;   // PAPER
+  if(pm=="STONE🪨") 
+    return 2;      
+  if(pm=="PAPER📄") 
+    return 0;      
+  if(pm=="SCISSORS✂️") 
+    return 1;   
 }
 
 function tie(pm){
-  if(pm=="STONE🪨") return 0;
-  if(pm=="PAPER📄") return 1;
+  if(pm=="STONE🪨") 
+    return 0;
+  if(pm=="PAPER📄") 
+    return 1;
   if(pm=="SCISSORS✂️") return 2;
 }
 
@@ -90,6 +101,7 @@ else
   WelcomePg.append(score, playerScore, computerScore, nextBtn);
 
   nextBtn.addEventListener("click", () => {
+    WelcomePg.innerHTML="";
     r++;        // move to next round
     play();     // continue game
   });
@@ -97,7 +109,7 @@ else
 
 
 function play(){
-    if(r>n)
+    if(r==n+1)
     {
         
         if(c>p)
@@ -123,6 +135,9 @@ return;
   { name: "PAPER📄", img: "hand.jpg" },
   { name: "SCISSORS✂️", img: "scissors.jpg" }
 ];
+const compChoice=[{ name: "STONE🪨", img: "stone.jpg" },
+  { name: "PAPER📄", img: "hand.jpg" },
+  { name: "SCISSORS✂️", img: "scissors.jpg" }];
     choices.forEach(choice => {
     const ch = document.createElement("button");
     ch.classList.add("bttn");
@@ -137,18 +152,18 @@ return;
     WelcomePg.append(ch);
 
     ch.addEventListener("click", () => {
+      WelcomePg.innerHTML="";
         playMove = choice.name;
-  let compMove=["STONE🪨", "PAPER📄", "SCISSORS✂️"];
   let ran1= Math.floor(Math.random()*100)+1;
   let result=0;
   if(l=="HARD")
   {
-    if(ran1<=65)
+    if(ran1<=70)
     {
         result=lose(playMove);
         c++;
     }
-    else if(ran1<=85)
+    else if(ran1<=90)
     {
         result=tie(playMove);
     }
@@ -192,15 +207,21 @@ return;
         c++;
     }
   }
-  WelcomePg.textContent="COMPUTER CHOSE "+compMove[result];
+  WelcomePg.textContent="COMPUTER CHOSE ";
+  let img=document.createElement("img");
+  img.src=compChoice[result].img;
+  img.style.height="100px";
+  img.style.width="100px";
+  WelcomePg.append(img);
   let d = document.createElement("button");
-  d.textContent = "DISPLAY";
+  d.textContent = "SCORE";
   
   d.classList.add("bttn");
 
   WelcomePg.append(d);
 
   d.addEventListener("click",event=>{
+    WelcomePg.innerHTML="";
     if(r<=n)
   display();
   });
