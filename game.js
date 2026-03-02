@@ -113,11 +113,20 @@ function play(){
     {
         
         if(c>p)
+        {
             WelcomePg.textContent="COMPUTER WINS BY "+(c-p)+" POINTS. BETTER LUCK NEXT TIME!";
+            WelcomePg.style.color="red";
+        }
         else if(p>c)
+        {
             WelcomePg.textContent="CONGRATS! PLAYER WINS BY "+(p-c)+" POINTS";
+            WelcomePg.style.color="green";
+        }
         else if(p==c)
+        {
             WelcomePg.textContent="ITS A TIE! GOOD TRY!";
+            WelcomePg.style.color="yellow";
+        }
     
     
 setTimeout(()=>{
